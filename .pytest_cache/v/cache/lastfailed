@@ -1,0 +1,10 @@
+{
+  "tests-api/admin_panel/test_allPermissions.py::TestPermissions::()::test_EWA_2011_permission_data": true, 
+  "tests-api/admin_panel/test_groups.py::TestGroupsApi::()::test_EWA_1910_edit_group_info": true, 
+  "tests-api/admin_panel/test_groups.py::TestGroupsApi::()::test_EWA_1936_pass_empty_payload_group_id_toedit": true, 
+  "tests-api/user_panel/test_add_employee_basic_info.py::TestEmployeeBasicData::()::test_EWA_150_to_validate_add_user_api": true, 
+  "tests-api/user_panel/test_add_employee_basic_info.py::TestEmployeeBasicData::()::test_EWA_151_add_duplicate_user": true, 
+  "tests-api/user_panel/test_add_employee_basic_info.py::TestEmployeeBasicData::()::test_EWA_159_check_for_mandatory_fields": true, 
+  "tests-api/user_panel/test_add_employee_basic_info.py::TestEmployeeBasicData::()::test_EWA_3114_check_grades_incorrect_value": true, 
+  "tests-api/user_panel/test_add_employee_basic_info.py::TestEmployeeBasicData::()::test_EWA_3114_check_groups_incorrect_value": true
+}

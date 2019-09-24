@@ -1,0 +1,106 @@
+get_all_permisssions:
+     responseCode : 2000 
+     message :  Permissions data sent successfully.  
+     permissions :
+
+              - parentPermissionId : 1
+                parentPermissionDescription :  View Personal Contact Details
+
+
+              - parentPermissionId : 2
+                parentPermissionDescription :  View Employee CTC, View Employee Bank Info & Govt. Bank Info
+
+
+              - parentPermissionId : 3
+                parentPermissionDescription :  View Govt. Docs Info
+
+
+              - parentPermissionId : 4
+                parentPermissionDescription :  View Employee Permissions, Access Roles and Groups
+
+
+              - parentPermissionId : 5
+                parentPermissionDescription :  View Other Info of an Employee
+
+
+              - parentPermissionId : 6
+                parentPermissionDescription :  Edit Basic Info
+
+
+              - parentPermissionId : 7
+                parentPermissionDescription :  Edit Emergency Info
+
+
+              - parentPermissionId : 8
+                parentPermissionDescription :  Edit Employee CTC, Edit Employee Bank Info & Govt. Bank Info
+
+
+              - parentPermissionId : 9
+                parentPermissionDescription :  Edit Govt. Docs Info
+
+
+              - parentPermissionId : 10
+                parentPermissionDescription :  Edit Employee Permissions, Access Roles and Groups
+
+
+              - parentPermissionId : 11
+                parentPermissionDescription :  Edit Other Info of the Employee
+
+
+              - parentPermissionId : 12
+                parentPermissionDescription :  View time sheets.
+
+
+              - parentPermissionId : 13
+                parentPermissionDescription :  Edit time sheets.
+
+
+              - parentPermissionId : 14
+                parentPermissionDescription :  View Leave Requests
+
+
+              - parentPermissionId : 15
+                parentPermissionDescription :  View, Approve/Reject Profile Edit Requests
+
+
+              - parentPermissionId : 16
+                parentPermissionDescription :  Edit Personal Contact Info
+
+
+              - parentPermissionId : 17
+                parentPermissionDescription :  View Family Info
+
+
+              - parentPermissionId : 18
+                parentPermissionDescription :  Edit Family Info
+
+
+              - parentPermissionId : 19
+                parentPermissionDescription :  Add a User
+
+
+              - parentPermissionId : 20
+                parentPermissionDescription :  Upload Calendar Info
+
+
+              - parentPermissionId : 21
+                parentPermissionDescription :  Upload Time sheet info
+
+
+              - parentPermissionId : 22
+                parentPermissionDescription :  Import Export User Data
+
+
+              - parentPermissionId : 23
+                parentPermissionDescription :  Org Admin
+
+
+              - parentPermissionId : 24
+                parentPermissionDescription :  View Admin Logs
+
+
+              - parentPermissionId : 25
+                parentPermissionDescription :  Theme Change
+
+
+ 

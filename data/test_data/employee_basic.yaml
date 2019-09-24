@@ -1,0 +1,40 @@
+add_employee_basic_info:
+    firstName: Test
+    lastName:  Automation
+    dateOfBirth: 01-01-1975
+    fatherName: Senion Automation
+    sex: Female
+    designation: Automation Engineer
+    selectedGrade:
+    dateOfJoining: 02-02-2015
+    selectedGroups: [Groups1, Groups2]
+    jobLocation: Noida
+    reportingManager: email@email.com
+    reportingManagerHR: email@email.com
+    reportingManagerFinance: email@email.com
+    emailId: test_automation@email.com
+    contactNumber: 1234567890
+    image        :
+
+add_employee_response:
+    responseCode: 2000
+    message: User created successfully.
+
+add_duplicate_user :
+  responseCode: 2107
+  message: The entered Email address is already registered.
+
+missing_fields :
+  message: Fields are not in required format
+
+incorrect_grade_value :
+  responseCode: 4016
+  message: Grade for employee doesn't exist.Please create grade
+
+incorrect_group_value :
+  responseCode: 4031
+  message: Selected groups doesn't exist. Please create.
+
+non_admin_token_response :
+    responseCode : 401
+    message :  Permission denied

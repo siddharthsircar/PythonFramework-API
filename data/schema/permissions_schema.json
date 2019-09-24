@@ -1,0 +1,34 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "responseCode": {
+      "$id": "/properties/responseCode",
+      "type": "integer"
+    },
+    "message": {
+      "$id": "/properties/message",
+      "type": "string"
+    },
+    "permissions": {
+      "$id": "/properties/permissions",
+      "type": "array",
+      "items": {
+        "$id": "/properties/permissions/items",
+        "type": "object",
+        "properties": {
+          "parentPermissionId": {
+            "$id": "/properties/permissions/items/properties/parentPermissionId",
+            "type": "integer"
+          },
+          "parentPermissionDescription": {
+            "$id": "/properties/permissions/items/properties/parentPermissionDescription",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

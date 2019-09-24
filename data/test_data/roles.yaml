@@ -1,0 +1,107 @@
+roles_list_schema : schema/roles_schema.json
+
+add_role :
+    -  roleName: AddgroupFromAutomation
+       roleDescription: Automation group Test Case
+       roleGroup: 60
+       permissions: [1,2]
+
+    -  roleName: AddgroupFromAutomationAddgroupFromAutomationAddgroupFromAutomationAddgroupFromAutomationAddgroupFromAutomation
+       roleDescription: Automation group Test Case Automation group Test Case Automation group Test Case Automation group Test Case Automation group Test Case Automation group Test Case Automation group Test Case
+       roleGroup: 60
+       permissions: [1,2,3]
+
+    -  roleName: $3786876!!!&8789975667
+       roleDescription: group Description
+       roleGroup: 2
+       permissions: [1,2,4]
+
+    -  roleName: ~!@#$%^&*()_
+       roleDescription: ~!@#$%^&*()
+       roleGroup: [2]
+       permissions: [1,2,5]
+
+    -  roleName: ¸Ωƒ©ƒƒ¥¨¨œ¨¨∑˙ß√˙∆∆˙ß
+       roleDescription: ©≈˙©ß©ˆ¨¨ˆˆ∂π∫∆∫¬∆ç©øˆ©ˆˆ©ç©¨¨ç¨¨©∂∫∫˜˜≈∫ßåÔÓı≈Ø©Ø≈©Ø
+       roleGroup: [2]
+       permissions: [1,2,6]
+
+
+    -  roleName:   All permissions
+       roleDescription: All permissions
+       roleGroup: [2]
+       permissions: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+
+
+add_role_response :
+      responseCode : 2000
+      message :  New Role is created.
+
+add_new_role:
+    roleName: AddingroleFromAutomation_test2
+    roleDescription: Automation add role Test Case
+    roleGroup:
+    permissions:
+
+add_incorrect_Group_ID :
+  roleName: AddingroleFromAutomation_test2
+  roleDescription: Automation add role Test Case
+  roleGroup: -99999
+  permissions: [1,2,3]
+
+  get_role_list_roleID :
+    roleId : 10
+
+
+
+
+edit_role :
+     roleName: EditedroleFromAutomation
+     roleDescription: Edited role Test Case
+     roleGroup :
+     Permissions :
+
+
+
+edit_role_response :
+      responseCode: 2000
+      message : Role edited successfully.
+
+
+edit_role_with_deleted_id_response:
+      responseCode: 4035
+      message: No such RoleId exist.
+
+delete_role_response :
+    responseCode: 2000,
+    message: Role Deleted successfully.
+
+
+add_role_with_same_name:
+     responseCode : 4009
+     message :  Similar role already exists.
+
+role_with_same_name_different_description:
+    responseCode : 4012
+    message :  Similar role already exists.
+
+
+
+delete_role_with_deleted_id_response:
+      responseCode: 4022
+      message: No such Role to Delete.
+
+#add role name in the end
+add_role_with_same_permissions :
+     responseCode : 4037
+     message :  Role is already created under the name of Role1.
+
+non_admin_token_response :
+    responseCode : 401
+    message :  Permission denied
+
+pass_non_existence_roleGroup_Id :
+  responseCode: 4023
+  message:  No such Role Group exists.
+
+

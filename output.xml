@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="8" name="pytest" skips="4" tests="120" time="500.963"><testcase classname="tests-api.admin_panel.test_allPermissions.TestPermissions" file="tests-api\admin_panel\test_allPermissions.py" line="32" name="test_validate_permissions_schema" time="0.685000181198"></testcase><testcase classname="tests-api.admin_panel.test_allPermissions.TestPermissions" file="tests-api\admin_panel\test_allPermissions.py" line="38" name="test_EWA_2013_pass_invalid_authorization_token" time="0.585000038147"></testcase><testcase classname="tests-api.admin_panel.test_allPermissions.TestPermissions" file="tests-api\admin_panel\test_allPermissions.py" line="43" name="test_EWA_2012_pass_null_authorization_token" time="0.590000152588"></testcase><testcase classname="tests-api.admin_panel.test_allPermissions.TestPermissions" file="tests-api\admin_panel\test_allPermissions.py" line="48" name="test_EWA_2014_pass_empty_authorization_token" time="0.624000072479"></testcase><testcase classname="tests-api.admin_panel.test_allPermissions.TestPermissions" file="tests-api\admin_panel\test_allPermissions.py" line="53" name="test_EWA_2011_permission_data" time="0.639999866486"><failure message="AssertionError: assert [{&apos;parentPerm...nId&apos;: 7}, ...] == [{&apos;parentPermi...nId&apos;: 6}, ...]
+  At index 0 diff: {&apos;parentPermissionDescription&apos;: &apos;View Personal Contact Details&apos;, &apos;parentPermissionId&apos;: 2} != {&apos;parentPermissionDescription&apos;: &apos;View Personal Contact Details&apos;, &apos;parentPermissionId&apos;: 1}
+  Use -v to get the full diff">self = &lt;admin_panel.test_allPermissions.TestPermissions object at 0x00000000054F6208&gt;
+test_setup = {&apos;schema&apos;: &apos;D:\\EWA\\Python Framework\\ewa_qa_api-master\\data\\schema/permissions_schema.json&apos;, &apos;url&apos;: &apos;http://34.192.201.69:4000/admin/permissions/allPermissions&apos;}
+admin_token = &apos;JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJld2FhZG1pbkBjZWxzeXNlbWFpbC5jZWxzeXN3dGMuaW4iLCJjcmVhdGVkX2F0IjoiMjAxOC0wOS0xN1QwNzoxMTo1MS4wOTJaIn0.fW7Am3nr1lcwZqwX3NmDUATcT3aoM7N2ywjeBLGXeB0&apos;
+
+    def test_EWA_2011_permission_data(self, test_setup, admin_token):
+        logger.debug(&apos;Permissions: test_validate_permissions_schema&apos;)
+        response = webservice.get(url=test_setup[&apos;url&apos;], token=admin_token)
+        response_data = response.json()
+        permissions = utils.encode_to_ascii(response_data[&apos;permissions&apos;])
+        logger.debug(&apos;Permissions: Validating json data&apos;)
+        assert response_data[&apos;message&apos;].encode(&quot;ascii&quot;, &quot;ignore&quot;) == permissions_data.get_all_permisssions.message
+&gt;       assert permissions == permissions_data.get_all_permisssions.permissions
+E       AssertionError: assert [{&apos;parentPerm...nId&apos;: 7}, ...] == [{&apos;parentPermi...nId&apos;: 6}, ...]
+E         At index 0 diff: {&apos;parentPermissionDescription&apos;: &apos;View Personal Contact Details&apos;, &apos;parentPermissionId&apos;: 2} != {&apos;parentPermissionDescription&apos;: &apos;View Personal Contact Details&apos;, &apos;parentPermissionId&apos;: 1}
+E         Use -v to get the full diff
+
+tests-api\admin_panel\test_allPermissions.py:61: AssertionError</failure></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="52" name="test_validate_gradess_schema" time="0.669999837875"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="58" name="test_EWA_1898_pass_invalid_authorization_token" time="0.608000040054"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="63" name="test_EWA_1899_pass_null_authorization_token" time="0.589000225067"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="68" name="test_EWA_1897_pass_empty_authorization_token" time="0.599999904633"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="79" name="test_EWA_1900_empty_authorization_token_addNew" time="0.643000125885"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="84" name="test_EWA_1903_invalid_authorization_token_addNew" time="0.582000017166"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="89" name="test_EWA_1906_null_authorization_token_addNew" time="0.582000255585"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="94" name="test_EWA_1893_1928__add_new_grade[add_payload0]" time="0.668000221252"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="94" name="test_EWA_1893_1928__add_new_grade[add_payload1]" time="0.625999927521"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="94" name="test_EWA_1893_1928__add_new_grade[add_payload2]" time="0.614000082016"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="94" name="test_EWA_1893_1928__add_new_grade[add_payload3]" time="0.62099981308"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="94" name="test_EWA_1893_1928__add_new_grade[add_payload4]" time="0.641999959946"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="94" name="test_EWA_1893_1928__add_new_grade[add_payload5]" time="0.614000320435"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="94" name="test_EWA_1893_1928__add_new_grade[add_payload6]" time="0.632000207901"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="106" name="test_EWA_2020_create_grade_with_same_name[add_payload0]" time="0.588000059128"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="106" name="test_EWA_2020_create_grade_with_same_name[add_payload1]" time="0.595000267029"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="106" name="test_EWA_2020_create_grade_with_same_name[add_payload2]" time="0.584999799728"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="106" name="test_EWA_2020_create_grade_with_same_name[add_payload3]" time="0.609999895096"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="106" name="test_EWA_2020_create_grade_with_same_name[add_payload4]" time="0.604000091553"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="106" name="test_EWA_2020_create_grade_with_same_name[add_payload5]" time="0.00300002098083"><skipped message="Adding grade with same integer or None is not correct data" type="pytest.skip">D:\EWA\Python Framework\ewa_qa_api-master\tests-api\admin_panel\test_grades.py:110: &lt;py._xmlgen.raw object at 0x00000000054D5128&gt;</skipped></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="106" name="test_EWA_2020_create_grade_with_same_name[add_payload6]" time="0.00200009346008"><skipped message="Adding grade with same integer or None is not correct data" type="pytest.skip">D:\EWA\Python Framework\ewa_qa_api-master\tests-api\admin_panel\test_grades.py:110: &lt;py._xmlgen.raw object at 0x000000000552EDA0&gt;</skipped></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="119" name="test_EWA_2021_create_grade_with_same_name_different_description[add_payload0]" time="0.611000299454"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="119" name="test_EWA_2021_create_grade_with_same_name_different_description[add_payload1]" time="0.639000177383"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="119" name="test_EWA_2021_create_grade_with_same_name_different_description[add_payload2]" time="0.628999948502"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="119" name="test_EWA_2021_create_grade_with_same_name_different_description[add_payload3]" time="0.638000011444"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="119" name="test_EWA_2021_create_grade_with_same_name_different_description[add_payload4]" time="0.634000062943"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="119" name="test_EWA_2021_create_grade_with_same_name_different_description[add_payload5]" time="0.0090000629425"><skipped message="Adding grade with same integer or None is not correct data" type="pytest.skip">D:\EWA\Python Framework\ewa_qa_api-master\tests-api\admin_panel\test_grades.py:125: &lt;py._xmlgen.raw object at 0x0000000005440668&gt;</skipped></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="119" name="test_EWA_2021_create_grade_with_same_name_different_description[add_payload6]" time="0.00899982452393"><skipped message="Adding grade with same integer or None is not correct data" type="pytest.skip">D:\EWA\Python Framework\ewa_qa_api-master\tests-api\admin_panel\test_grades.py:125: &lt;py._xmlgen.raw object at 0x0000000005440128&gt;</skipped></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="139" name="test_EWA_1901_empty_authorization_token_editGrade" time="0.56200003624"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="145" name="test_EWA_1904_invalid_authorization_token_editGrade" time="0.589000225067"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="152" name="test_EWA_1907_null_authorization_token_editGrade" time="0.621999502182"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="158" name="test_EWA_1894_edit_grade_info" time="0.609999895096"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="168" name="test_EWA_1930_edit_deleted_id_to_edit_gradeinfo" time="1.21399998665"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="184" name="test_EWA_1933_pass_empty_payload_edit_gradeinfo" time="0.607000112534"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="200" name="test_EWA_1905_invalid_authorization_token_deleteGrade" time="0.618000030518"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="206" name="test_EWA_1908_null_authorization_token_deleteGrade" time="0.59500002861"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="212" name="test_EWA_1939_1995_delete_grade_id" time="0.644000291824"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="218" name="test_EWA_1902_empty_authorization_token_deleteGrade" time="0.615000247955"></testcase><testcase classname="tests-api.admin_panel.test_grades.TestGradesApi" file="tests-api\admin_panel\test_grades.py" line="224" name="test_EWA_1940_delete_grade_with_deleted_id" time="5.56599998474"><system-out> Grade Deleted ...
+ Grade Deleted ...
+ Grade Deleted ...
+ Grade Deleted ...
+ Grade Deleted ...
+ Grade Deleted ...
+ Grade Deleted ...
+</system-out></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="48" name="test_validate_Groups_schema" time="0.665999889374"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="54" name="test_EWA_1898_pass_invalid_authorization_token" time="0.598999977112"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="60" name="test_EWA_1918_null_authorization_getGroupList" time="0.59600019455"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="65" name="test_EWA_1916_empty_authorization_token_getGroupList" time="0.592000246048"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="71" name="test_EWA_1917_non_admin_token_getGroupList" time="0.614000082016"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="86" name="test_EWA_1927_empty_authorization_token_addNewGroup" time="0.628000259399"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="91" name="test_EWA_1924_invalid_authorization_token_addNewGroup" time="0.572000265121"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="96" name="test_EWA_1921_null_authorization_token_addNewGroup" time="0.59900021553"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="103" name="test_EWA_1909_1934_add_new_group[add_payload0]" time="0.65700006485"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="103" name="test_EWA_1909_1934_add_new_group[add_payload1]" time="0.635999679565"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="103" name="test_EWA_1909_1934_add_new_group[add_payload2]" time="0.621000051498"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="103" name="test_EWA_1909_1934_add_new_group[add_payload3]" time="0.644999980927"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="103" name="test_EWA_1909_1934_add_new_group[add_payload4]" time="0.628999948502"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="103" name="test_EWA_1909_1934_add_new_group[add_payload5]" time="0.622999668121"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="115" name="test_EWA_2020_create_group_with_same_name[add_payload0]" time="0.625999927521"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="115" name="test_EWA_2020_create_group_with_same_name[add_payload1]" time="0.612999916077"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="115" name="test_EWA_2020_create_group_with_same_name[add_payload2]" time="0.59500002861"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="115" name="test_EWA_2020_create_group_with_same_name[add_payload3]" time="0.602999925613"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="115" name="test_EWA_2020_create_group_with_same_name[add_payload4]" time="0.591000080109"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="115" name="test_EWA_2020_create_group_with_same_name[add_payload5]" time="0.630999565125"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="126" name="test_EWA_2021_create_group_with_same_name_different_description[add_payload0]" time="0.618999958038"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="126" name="test_EWA_2021_create_group_with_same_name_different_description[add_payload1]" time="0.615000009537"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="126" name="test_EWA_2021_create_group_with_same_name_different_description[add_payload2]" time="0.626999616623"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="126" name="test_EWA_2021_create_group_with_same_name_different_description[add_payload3]" time="0.637000322342"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="126" name="test_EWA_2021_create_group_with_same_name_different_description[add_payload4]" time="0.601000070572"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="126" name="test_EWA_2021_create_group_with_same_name_different_description[add_payload5]" time="0.606000185013"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="140" name="test_create_group_with_same_permissions[add_payload0]" time="0.615000009537"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="140" name="test_create_group_with_same_permissions[add_payload1]" time="0.817000150681"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="140" name="test_create_group_with_same_permissions[add_payload2]" time="0.608999967575"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="140" name="test_create_group_with_same_permissions[add_payload3]" time="0.651000022888"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="140" name="test_create_group_with_same_permissions[add_payload4]" time="0.624000310898"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="140" name="test_create_group_with_same_permissions[add_payload5]" time="0.639999866486"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="160" name="test_EWA_1926_empty_authorization_token_editGroup" time="0.590000152588"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="166" name="test_EWA_1923_invalid_authorization_token_editGroup" time="0.628000020981"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="174" name="test_EWA_1920_null_authorization_token_editGroup" time="0.595999956131"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="184" name="test_EWA_1910_edit_group_info" time="120.693999767"><failure message="ConnectionError: (&apos;Connection aborted.&apos;, BadStatusLine(&quot;&apos;&apos;&quot;,))">self = &lt;admin_panel.test_groups.TestGroupsApi object at 0x00000000055AC128&gt;
+delete_after_add_group = [144, 145, 146, 147, 148, 149]
+
+    def test_EWA_1910_edit_group_info(self, delete_after_add_group):
+    
+        logger.debug(&apos;Edit groups : test null authorization token&apos;)
+        edit_group_url = base_url + apis.edit_group_info_endpoint + str(delete_after_add_group[0])
+        edit_group_payload = groups_data.get(&apos;edit_group&apos;)
+&gt;       response = webservice.put(url=edit_group_url, token=admin_token, data=json.dumps(edit_group_payload))
+
+tests-api\admin_panel\test_groups.py:190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\webservice.py:15: in put
+    response = httplibrary.put(url=url, data=data, files=files, headers=headers)
+venv\lib\site-packages\requests\api.py:126: in put
+    return request(&apos;put&apos;, url, data=data, **kwargs)
+venv\lib\site-packages\requests\api.py:58: in request
+    return session.request(method=method, url=url, **kwargs)
+venv\lib\site-packages\requests\sessions.py:508: in request
+    resp = self.send(prep, **send_kwargs)
+venv\lib\site-packages\requests\sessions.py:618: in send
+    r = adapter.send(request, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;requests.adapters.HTTPAdapter object at 0x00000000055AC668&gt;
+request = &lt;PreparedRequest [PUT]&gt;, stream = False
+timeout = &lt;urllib3.util.timeout.Timeout object at 0x00000000055AC4E0&gt;
+verify = True, cert = None, proxies = OrderedDict()
+
+    def send(self, request, stream=False, timeout=None, verify=True, cert=None, proxies=None):
+        &quot;&quot;&quot;Sends PreparedRequest object. Returns Response object.
+    
+            :param request: The :class:`PreparedRequest &lt;PreparedRequest&gt;` being sent.
+            :param stream: (optional) Whether to stream the request content.
+            :param timeout: (optional) How long to wait for the server to send
+                data before giving up, as a float, or a :ref:`(connect timeout,
+                read timeout) &lt;timeouts&gt;` tuple.
+            :type timeout: float or tuple or urllib3 Timeout object
+            :param verify: (optional) Either a boolean, in which case it controls whether
+                we verify the server&apos;s TLS certificate, or a string, in which case it
+                must be a path to a CA bundle to use
+            :param cert: (optional) Any user-provided SSL certificate to be trusted.
+            :param proxies: (optional) The proxies dictionary to apply to the request.
+            :rtype: requests.Response
+            &quot;&quot;&quot;
+    
+        conn = self.get_connection(request.url, proxies)
+    
+        self.cert_verify(conn, request.url, verify, cert)
+        url = self.request_url(request, proxies)
+        self.add_headers(request)
+    
+        chunked = not (request.body is None or &apos;Content-Length&apos; in request.headers)
+    
+        if isinstance(timeout, tuple):
+            try:
+                connect, read = timeout
+                timeout = TimeoutSauce(connect=connect, read=read)
+            except ValueError as e:
+                # this may raise a string formatting error.
+                err = (&quot;Invalid timeout {0}. Pass a (connect, read) &quot;
+                       &quot;timeout tuple, or a single float to set &quot;
+                       &quot;both timeouts to the same value&quot;.format(timeout))
+                raise ValueError(err)
+        elif isinstance(timeout, TimeoutSauce):
+            pass
+        else:
+            timeout = TimeoutSauce(connect=timeout, read=timeout)
+    
+        try:
+            if not chunked:
+                resp = conn.urlopen(
+                    method=request.method,
+                    url=url,
+                    body=request.body,
+                    headers=request.headers,
+                    redirect=False,
+                    assert_same_host=False,
+                    preload_content=False,
+                    decode_content=False,
+                    retries=self.max_retries,
+                    timeout=timeout
+                )
+    
+            # Send the request.
+            else:
+                if hasattr(conn, &apos;proxy_pool&apos;):
+                    conn = conn.proxy_pool
+    
+                low_conn = conn._get_conn(timeout=DEFAULT_POOL_TIMEOUT)
+    
+                try:
+                    low_conn.putrequest(request.method,
+                                        url,
+                                        skip_accept_encoding=True)
+    
+                    for header, value in request.headers.items():
+                        low_conn.putheader(header, value)
+    
+                    low_conn.endheaders()
+    
+                    for i in request.body:
+                        low_conn.send(hex(len(i))[2:].encode(&apos;utf-8&apos;))
+                        low_conn.send(b&apos;\r\n&apos;)
+                        low_conn.send(i)
+                        low_conn.send(b&apos;\r\n&apos;)
+                    low_conn.send(b&apos;0\r\n\r\n&apos;)
+    
+                    # Receive the response from the server
+                    try:
+                        # For Python 2.7+ versions, use buffering of HTTP
+                        # responses
+                        r = low_conn.getresponse(buffering=True)
+                    except TypeError:
+                        # For compatibility with Python 2.6 versions and back
+                        r = low_conn.getresponse()
+    
+                    resp = HTTPResponse.from_httplib(
+                        r,
+                        pool=conn,
+                        connection=low_conn,
+                        preload_content=False,
+                        decode_content=False
+                    )
+                except:
+                    # If we hit any problems here, clean up the connection.
+                    # Then, reraise so that we can handle the actual exception.
+                    low_conn.close()
+                    raise
+    
+        except (ProtocolError, socket.error) as err:
+&gt;           raise ConnectionError(err, request=request)
+E           ConnectionError: (&apos;Connection aborted.&apos;, BadStatusLine(&quot;&apos;&apos;&quot;,))
+
+venv\lib\site-packages\requests\adapters.py:490: ConnectionError</failure></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="206" name="test_EWA_1935_pass_deleted_group_id_toedit" time="1.23600006104"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="221" name="test_EWA_1936_pass_empty_payload_group_id_toedit" time="120.680999994"><failure message="ConnectionError: (&apos;Connection aborted.&apos;, BadStatusLine(&quot;&apos;&apos;&quot;,))">self = &lt;admin_panel.test_groups.TestGroupsApi object at 0x0000000005525198&gt;
+delete_after_add_group = [144, 145, 146, 147, 148, 149]
+
+    def test_EWA_1936_pass_empty_payload_group_id_toedit(self, delete_after_add_group):
+        logger.debug(&apos;Edit groups : Test with empty payload&apos;)
+        edit_group_url = base_url + apis.edit_group_info_endpoint + str(delete_after_add_group[0])
+        edit_group_payload = {}
+        response = webservice.put(url=edit_group_url, token=admin_token,
+&gt;                                 data=json.dumps(edit_group_payload))
+
+tests-api\admin_panel\test_groups.py:227: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\webservice.py:15: in put
+    response = httplibrary.put(url=url, data=data, files=files, headers=headers)
+venv\lib\site-packages\requests\api.py:126: in put
+    return request(&apos;put&apos;, url, data=data, **kwargs)
+venv\lib\site-packages\requests\api.py:58: in request
+    return session.request(method=method, url=url, **kwargs)
+venv\lib\site-packages\requests\sessions.py:508: in request
+    resp = self.send(prep, **send_kwargs)
+venv\lib\site-packages\requests\sessions.py:618: in send
+    r = adapter.send(request, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;requests.adapters.HTTPAdapter object at 0x0000000005525D68&gt;
+request = &lt;PreparedRequest [PUT]&gt;, stream = False
+timeout = &lt;urllib3.util.timeout.Timeout object at 0x0000000005525898&gt;
+verify = True, cert = None, proxies = OrderedDict()
+
+    def send(self, request, stream=False, timeout=None, verify=True, cert=None, proxies=None):
+        &quot;&quot;&quot;Sends PreparedRequest object. Returns Response object.
+    
+            :param request: The :class:`PreparedRequest &lt;PreparedRequest&gt;` being sent.
+            :param stream: (optional) Whether to stream the request content.
+            :param timeout: (optional) How long to wait for the server to send
+                data before giving up, as a float, or a :ref:`(connect timeout,
+                read timeout) &lt;timeouts&gt;` tuple.
+            :type timeout: float or tuple or urllib3 Timeout object
+            :param verify: (optional) Either a boolean, in which case it controls whether
+                we verify the server&apos;s TLS certificate, or a string, in which case it
+                must be a path to a CA bundle to use
+            :param cert: (optional) Any user-provided SSL certificate to be trusted.
+            :param proxies: (optional) The proxies dictionary to apply to the request.
+            :rtype: requests.Response
+            &quot;&quot;&quot;
+    
+        conn = self.get_connection(request.url, proxies)
+    
+        self.cert_verify(conn, request.url, verify, cert)
+        url = self.request_url(request, proxies)
+        self.add_headers(request)
+    
+        chunked = not (request.body is None or &apos;Content-Length&apos; in request.headers)
+    
+        if isinstance(timeout, tuple):
+            try:
+                connect, read = timeout
+                timeout = TimeoutSauce(connect=connect, read=read)
+            except ValueError as e:
+                # this may raise a string formatting error.
+                err = (&quot;Invalid timeout {0}. Pass a (connect, read) &quot;
+                       &quot;timeout tuple, or a single float to set &quot;
+                       &quot;both timeouts to the same value&quot;.format(timeout))
+                raise ValueError(err)
+        elif isinstance(timeout, TimeoutSauce):
+            pass
+        else:
+            timeout = TimeoutSauce(connect=timeout, read=timeout)
+    
+        try:
+            if not chunked:
+                resp = conn.urlopen(
+                    method=request.method,
+                    url=url,
+                    body=request.body,
+                    headers=request.headers,
+                    redirect=False,
+                    assert_same_host=False,
+                    preload_content=False,
+                    decode_content=False,
+                    retries=self.max_retries,
+                    timeout=timeout
+                )
+    
+            # Send the request.
+            else:
+                if hasattr(conn, &apos;proxy_pool&apos;):
+                    conn = conn.proxy_pool
+    
+                low_conn = conn._get_conn(timeout=DEFAULT_POOL_TIMEOUT)
+    
+                try:
+                    low_conn.putrequest(request.method,
+                                        url,
+                                        skip_accept_encoding=True)
+    
+                    for header, value in request.headers.items():
+                        low_conn.putheader(header, value)
+    
+                    low_conn.endheaders()
+    
+                    for i in request.body:
+                        low_conn.send(hex(len(i))[2:].encode(&apos;utf-8&apos;))
+                        low_conn.send(b&apos;\r\n&apos;)
+                        low_conn.send(i)
+                        low_conn.send(b&apos;\r\n&apos;)
+                    low_conn.send(b&apos;0\r\n\r\n&apos;)
+    
+                    # Receive the response from the server
+                    try:
+                        # For Python 2.7+ versions, use buffering of HTTP
+                        # responses
+                        r = low_conn.getresponse(buffering=True)
+                    except TypeError:
+                        # For compatibility with Python 2.6 versions and back
+                        r = low_conn.getresponse()
+    
+                    resp = HTTPResponse.from_httplib(
+                        r,
+                        pool=conn,
+                        connection=low_conn,
+                        preload_content=False,
+                        decode_content=False
+                    )
+                except:
+                    # If we hit any problems here, clean up the connection.
+                    # Then, reraise so that we can handle the actual exception.
+                    low_conn.close()
+                    raise
+    
+        except (ProtocolError, socket.error) as err:
+&gt;           raise ConnectionError(err, request=request)
+E           ConnectionError: (&apos;Connection aborted.&apos;, BadStatusLine(&quot;&apos;&apos;&quot;,))
+
+venv\lib\site-packages\requests\adapters.py:490: ConnectionError</failure></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="238" name="test_EWA_1922_invalid_authorization_token_deleteGroup" time="0.588000059128"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="244" name="test_EWA_1919_null_authorization_token_deleteGroup" time="0.592000007629"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="250" name="test_EWA_2004_delete_group_id" time="0.617999792099"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="256" name="test_EWA_1925_empty_authorization_token_deleteGroup" time="0.590000152588"></testcase><testcase classname="tests-api.admin_panel.test_groups.TestGroupsApi" file="tests-api\admin_panel\test_groups.py" line="276" name="test_EWA_1941_delete_group_with_deleted_id" time="4.91499972343"><system-out> Group Deleted ...
+ Group Deleted ...
+ Group Deleted ...
+ Group Deleted ...
+ Group Deleted ...
+ Group Deleted ...
+</system-out></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="54" name="test_1976_add_new_role" time="1.26999998093"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="65" name="test_9221_create_role_same_role" time="1.24099993706"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="75" name="test_EWA_6076_Pass_non_org_admin_to_addRole" time="0.599999904633"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="84" name="test_6075_Pass_inncorrect_group_ID_to_addRole" time="0.637000083923"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="96" name="test_1969_Pass_null_authorization_token" time="0.620000123978"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="102" name="test_1969_Pass_invalid_authorization_token" time="0.642999887466"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="111" name="test_1965_get_all_roles" time="1.9209997654"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="124" name="test_1980_getAllRoles_passing_empty_token" time="1.21199989319"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="131" name="test_1981_passing_non_admin_token" time="2.70599985123"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="142" name="test_1982_pass_null_authorization_token" time="1.20800018311"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="150" name="test_1967_Edit_role_description" time="2.59799981117"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="168" name="test_1968_pass_null_authorization_editRole" time="1.1890001297"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="175" name="test_1971_pass_invalid_authorization_editRole" time="1.19800019264"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="182" name="test_1974_pass_empty_authorization_editRole" time="1.29300022125"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="189" name="test_automation_pass_non_admin_authorization_editRole" time="1.22899985313"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="199" name="test_1984_pass_deletedID_to_editRole" time="1.21000003815"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="222" name="test_EWA_1970_invalid_authorization_token_deleterole" time="0.594000101089"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="228" name="test_EWA_1966_pass_null_authorization_token_deleterole" time="0.617000341415"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="234" name="test_EWA_1987_delete_rol_with_deleted_id" time="1.23599982262"></testcase><testcase classname="tests-api.admin_panel.test_roles.TestRolesApi" file="tests-api\admin_panel\test_roles.py" line="246" name="test_EWA_1978_delete_role_id" time="1.18799972534"><system-out> Role Deleted ...
+</system-out></testcase><testcase classname="tests-api.user_panel.test_add_employee_basic_info.TestEmployeeBasicData" file="tests-api\user_panel\test_add_employee_basic_info.py" line="39" name="test_EWA_150_to_validate_add_user_api" time="122.711000204"><failure message="ConnectionError: (&apos;Connection aborted.&apos;, BadStatusLine(&quot;&apos;&apos;&quot;,))">self = &lt;test_add_employee_basic_info.TestEmployeeBasicData object at 0x00000000054F8630&gt;
+delete_user = []
+
+    def test_EWA_150_to_validate_add_user_api(self, delete_user):
+        logger.debug(&apos;Employee Data: add user validation&apos;)
+        employee_payload = employee_api_helper.generate_employee_data()
+    
+        files = {&quot;image&quot; : (&quot;duck.png&quot;, (open(os.path.join(fwork.IN_DATA_PATH,&quot;images/duck.png&quot;),&quot;rb&quot;)))}
+        response = webservice.post(url=base_url + apis.employee_basic_data_endpoint,data=employee_payload, files=files,
+&gt;                                  token=hr_token, headers={})
+
+tests-api\user_panel\test_add_employee_basic_info.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\webservice.py:39: in post
+    response = httplibrary.post(url=url, data=data, files=files, headers=headers)
+venv\lib\site-packages\requests\api.py:112: in post
+    return request(&apos;post&apos;, url, data=data, json=json, **kwargs)
+venv\lib\site-packages\requests\api.py:58: in request
+    return session.request(method=method, url=url, **kwargs)
+venv\lib\site-packages\requests\sessions.py:508: in request
+    resp = self.send(prep, **send_kwargs)
+venv\lib\site-packages\requests\sessions.py:618: in send
+    r = adapter.send(request, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;requests.adapters.HTTPAdapter object at 0x00000000044D9198&gt;
+request = &lt;PreparedRequest [POST]&gt;, stream = False
+timeout = &lt;urllib3.util.timeout.Timeout object at 0x00000000044D95C0&gt;
+verify = True, cert = None, proxies = OrderedDict()
+
+    def send(self, request, stream=False, timeout=None, verify=True, cert=None, proxies=None):
+        &quot;&quot;&quot;Sends PreparedRequest object. Returns Response object.
+    
+            :param request: The :class:`PreparedRequest &lt;PreparedRequest&gt;` being sent.
+            :param stream: (optional) Whether to stream the request content.
+            :param timeout: (optional) How long to wait for the server to send
+                data before giving up, as a float, or a :ref:`(connect timeout,
+                read timeout) &lt;timeouts&gt;` tuple.
+            :type timeout: float or tuple or urllib3 Timeout object
+            :param verify: (optional) Either a boolean, in which case it controls whether
+                we verify the server&apos;s TLS certificate, or a string, in which case it
+                must be a path to a CA bundle to use
+            :param cert: (optional) Any user-provided SSL certificate to be trusted.
+            :param proxies: (optional) The proxies dictionary to apply to the request.
+            :rtype: requests.Response
+            &quot;&quot;&quot;
+    
+        conn = self.get_connection(request.url, proxies)
+    
+        self.cert_verify(conn, request.url, verify, cert)
+        url = self.request_url(request, proxies)
+        self.add_headers(request)
+    
+        chunked = not (request.body is None or &apos;Content-Length&apos; in request.headers)
+    
+        if isinstance(timeout, tuple):
+            try:
+                connect, read = timeout
+                timeout = TimeoutSauce(connect=connect, read=read)
+            except ValueError as e:
+                # this may raise a string formatting error.
+                err = (&quot;Invalid timeout {0}. Pass a (connect, read) &quot;
+                       &quot;timeout tuple, or a single float to set &quot;
+                       &quot;both timeouts to the same value&quot;.format(timeout))
+                raise ValueError(err)
+        elif isinstance(timeout, TimeoutSauce):
+            pass
+        else:
+            timeout = TimeoutSauce(connect=timeout, read=timeout)
+    
+        try:
+            if not chunked:
+                resp = conn.urlopen(
+                    method=request.method,
+                    url=url,
+                    body=request.body,
+                    headers=request.headers,
+                    redirect=False,
+                    assert_same_host=False,
+                    preload_content=False,
+                    decode_content=False,
+                    retries=self.max_retries,
+                    timeout=timeout
+                )
+    
+            # Send the request.
+            else:
+                if hasattr(conn, &apos;proxy_pool&apos;):
+                    conn = conn.proxy_pool
+    
+                low_conn = conn._get_conn(timeout=DEFAULT_POOL_TIMEOUT)
+    
+                try:
+                    low_conn.putrequest(request.method,
+                                        url,
+                                        skip_accept_encoding=True)
+    
+                    for header, value in request.headers.items():
+                        low_conn.putheader(header, value)
+    
+                    low_conn.endheaders()
+    
+                    for i in request.body:
+                        low_conn.send(hex(len(i))[2:].encode(&apos;utf-8&apos;))
+                        low_conn.send(b&apos;\r\n&apos;)
+                        low_conn.send(i)
+                        low_conn.send(b&apos;\r\n&apos;)
+                    low_conn.send(b&apos;0\r\n\r\n&apos;)
+    
+                    # Receive the response from the server
+                    try:
+                        # For Python 2.7+ versions, use buffering of HTTP
+                        # responses
+                        r = low_conn.getresponse(buffering=True)
+                    except TypeError:
+                        # For compatibility with Python 2.6 versions and back
+                        r = low_conn.getresponse()
+    
+                    resp = HTTPResponse.from_httplib(
+                        r,
+                        pool=conn,
+                        connection=low_conn,
+                        preload_content=False,
+                        decode_content=False
+                    )
+                except:
+                    # If we hit any problems here, clean up the connection.
+                    # Then, reraise so that we can handle the actual exception.
+                    low_conn.close()
+                    raise
+    
+        except (ProtocolError, socket.error) as err:
+&gt;           raise ConnectionError(err, request=request)
+E           ConnectionError: (&apos;Connection aborted.&apos;, BadStatusLine(&quot;&apos;&apos;&quot;,))
+
+venv\lib\site-packages\requests\adapters.py:490: ConnectionError</failure></testcase><testcase classname="tests-api.user_panel.test_add_employee_basic_info.TestEmployeeBasicData" file="tests-api\user_panel\test_add_employee_basic_info.py" line="53" name="test_EWA_151_add_duplicate_user" time="2.00499987602"><failure message="IndexError: list index out of range">self = &lt;test_add_employee_basic_info.TestEmployeeBasicData object at 0x00000000054A39E8&gt;
+delete_user = []
+
+    def test_EWA_151_add_duplicate_user(self, delete_user):
+    
+        employee_payload = employee_api_helper.generate_employee_data()
+&gt;       employee_payload[&apos;emailId&apos;] = delete_user[0]
+E       IndexError: list index out of range
+
+tests-api\user_panel\test_add_employee_basic_info.py:57: IndexError</failure></testcase><testcase classname="tests-api.user_panel.test_add_employee_basic_info.TestEmployeeBasicData" file="tests-api\user_panel\test_add_employee_basic_info.py" line="67" name="test_EWA_159_check_for_mandatory_fields" time="1.86299991608"><failure message="IndexError: list index out of range">self = &lt;test_add_employee_basic_info.TestEmployeeBasicData object at 0x00000000054B8D30&gt;
+delete_user = []
+
+    def test_EWA_159_check_for_mandatory_fields(self, delete_user):
+    
+        employee_payload = employee_api_helper.generate_employee_data()
+&gt;       employee_payload[&apos;emailId&apos;] = delete_user[0]
+E       IndexError: list index out of range
+
+tests-api\user_panel\test_add_employee_basic_info.py:71: IndexError</failure></testcase><testcase classname="tests-api.user_panel.test_add_employee_basic_info.TestEmployeeBasicData" file="tests-api\user_panel\test_add_employee_basic_info.py" line="80" name="test_EWA_710_check_for_missing_email" time="2.47900009155"></testcase><testcase classname="tests-api.user_panel.test_add_employee_basic_info.TestEmployeeBasicData" file="tests-api\user_panel\test_add_employee_basic_info.py" line="93" name="test_EWA_3113_pass_non_hr_token" time="2.52500009537"></testcase><testcase classname="tests-api.user_panel.test_add_employee_basic_info.TestEmployeeBasicData" file="tests-api\user_panel\test_add_employee_basic_info.py" line="111" name="test_EWA_3114_check_grades_incorrect_value" time="1.84400010109"><failure message="IndexError: list index out of range">self = &lt;test_add_employee_basic_info.TestEmployeeBasicData object at 0x00000000054B8E80&gt;
+delete_user = []
+
+    def test_EWA_3114_check_grades_incorrect_value(self, delete_user):
+        employee_payload = employee_api_helper.generate_employee_data()
+&gt;       employee_payload[&apos;emailId&apos;] = delete_user[0]
+E       IndexError: list index out of range
+
+tests-api\user_panel\test_add_employee_basic_info.py:114: IndexError</failure></testcase><testcase classname="tests-api.user_panel.test_add_employee_basic_info.TestEmployeeBasicData" file="tests-api\user_panel\test_add_employee_basic_info.py" line="126" name="test_EWA_3114_check_groups_incorrect_value" time="1.89499998093"><failure message="IndexError: list index out of range">self = &lt;test_add_employee_basic_info.TestEmployeeBasicData object at 0x0000000005735128&gt;
+delete_user = []
+
+    def test_EWA_3114_check_groups_incorrect_value(self, delete_user):
+        employee_payload = employee_api_helper.generate_employee_data()
+&gt;       employee_payload[&apos;emailId&apos;] = delete_user[0]
+E       IndexError: list index out of range
+
+tests-api\user_panel\test_add_employee_basic_info.py:129: IndexError</failure></testcase><testcase classname="tests-api.user_panel.test_add_employee_basic_info.TestEmployeeBasicData" file="tests-api\user_panel\test_add_employee_basic_info.py" line="139" name="test_EWA__pass_invalid_authorization_token" time="2.42800021172"></testcase><testcase classname="tests-api.user_panel.test_hr_admin_data.TestHrAdminData" file="tests-api\user_panel\test_hr_admin_data.py" line="25" name="test_EWA_6069_validate_groups_schema" time="0.763000011444"></testcase><testcase classname="tests-api.user_panel.test_hr_admin_data.TestHrAdminData" file="tests-api\user_panel\test_hr_admin_data.py" line="32" name="test_EWA_6070_non_hr_token" time="0.601999759674"></testcase><testcase classname="tests-api.user_panel.test_hr_admin_data.TestHrAdminData" file="tests-api\user_panel\test_hr_admin_data.py" line="40" name="test_EWA_6072_pass_invalid_authorization_token" time="0.590000152588"></testcase><testcase classname="tests-api.user_panel.test_hr_admin_data.TestHrAdminData" file="tests-api\user_panel\test_hr_admin_data.py" line="45" name="test_EWA_6071_pass_null_authorization_token" time="0.618000030518"></testcase><testcase classname="tests-api.user_panel.test_hr_admin_data.TestHrAdminData" file="tests-api\user_panel\test_hr_admin_data.py" line="50" name="test_EWA_6073_pass_empty_authorization_token" time="1.23900008202"></testcase></testsuite>

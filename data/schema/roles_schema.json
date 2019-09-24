@@ -1,0 +1,46 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "required": [
+      "roleName",
+      "roleDescription",
+     "roleGroup",
+     "permissions"
+   ],
+   "properties": {
+     "roleName": {
+       "$id": "#/properties/roleName",
+       "type": "string",
+       "title": "The Rolename Schema",
+       "default": "",
+       "pattern": "^(.*)$"
+     },
+     "roleDescription": {
+       "$id": "#/properties/roleDescription",
+       "type": "string",
+       "title": "The Roledescription Schema",
+       "default": "",
+       "pattern": "^(.*)$"
+     },
+    "roleGroup": {
+       "$id": "#/properties/roleGroup",
+       "type": "integer",
+       "title": "The Rolegroup Schema",
+       "default": 0
+     },
+     "permissions": {
+       "$id": "#/properties/permissions",
+       "type": "array",
+       "title": "The Permissions Schema",
+       "items": {
+         "$id": "#/properties/permissions/items",
+         "type": "integer",
+         "title": "The Items Schema",
+         "default": 0
+         }
+     }
+   }
+ }

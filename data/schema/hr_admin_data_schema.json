@@ -1,0 +1,80 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "responseCode": {
+      "$id": "/properties/responseCode",
+      "type": "integer"
+    },
+    "message": {
+      "$id": "/properties/message",
+      "type": "string"
+    },
+    "data": {
+      "$id": "/properties/data",
+      "type": "object",
+      "properties": {
+        "gradeList": {
+          "$id": "/properties/data/properties/gradeList",
+          "type": "array",
+          "items": {
+            "$id": "/properties/data/properties/gradeList/items",
+            "type": "object",
+            "properties": {
+              "gradeLabel": {
+                "$id": "/properties/data/properties/gradeList/items/properties/gradeLabel",
+                "type": "string"
+              },
+              "gradeId": {
+                "$id": "/properties/data/properties/gradeList/items/properties/gradeId",
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "orgAddressList": {
+          "$id": "/properties/data/properties/orgAddressList",
+          "type": "array",
+          "items": {
+            "$id": "/properties/data/properties/orgAddressList/items",
+            "type": "object",
+            "properties": {
+              "countryCode": {
+                "$id": "/properties/data/properties/orgAddressList/items/properties/countryCode",
+                "type": "string"
+              },
+              "shortName": {
+                "$id": "/properties/data/properties/orgAddressList/items/properties/shortName",
+                "type": "string"
+              },
+              "addressId": {
+                "$id": "/properties/data/properties/orgAddressList/items/properties/addressId",
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "groupList": {
+          "$id": "/properties/data/properties/groupList",
+          "type": "array",
+          "items": {
+            "$id": "/properties/data/properties/groupList/items",
+            "type": "object",
+            "properties": {
+              "groupLabel": {
+                "$id": "/properties/data/properties/groupList/items/properties/groupLabel",
+                "type": "string"
+              },
+              "groupId": {
+                "$id": "/properties/data/properties/groupList/items/properties/groupId",
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

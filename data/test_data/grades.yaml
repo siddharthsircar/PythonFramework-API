@@ -1,0 +1,64 @@
+grades_list_schema : schema/grades_schema.json
+
+add_grade :
+    -  gradeName: AddGradeFromAutomation
+       gradeDescription: Automation Grade Test Case
+
+
+    -  gradeName: AddGradeFromAutomationAddGradeFromAutomationAddGradeFromAutomationAddGradeFromAutomationAddGradeFromAutomation
+       gradeDescription: Automation Grade Test Case Automation Grade Test Case Automation Grade Test Case Automation Grade Test Case Automation Grade Test Case Automation Grade Test Case Automation Grade Test Case
+
+    -  gradeName: $3786876!!!&8789975667
+       gradeDescription: Grade Description
+
+    -  gradeName: ~!@#$%^&*()_
+       gradeDescription: ~!@#$%^&*()
+
+    -  gradeName: ¸Ωƒ©ƒƒ¥¨¨œ¨¨∑˙ß√˙∆∆˙ß
+       gradeDescription: ©≈˙©ß©ˆ¨¨ˆˆ∂π∫∆∫¬∆ç©øˆ©ˆˆ©ç©¨¨ç¨¨©∂∫∫˜˜≈∫ßåÔÓı≈Ø©Ø≈©Ø
+
+    -  gradeName:
+       gradeDescription:
+
+
+    -  gradeName:   1
+       gradeDescription: 2
+
+
+add_grade_response :
+      responseCode : 2000
+      message :  Grade added successfully.
+
+add_grade_with_same_name :
+     responseCode : 4017
+     message :  Similar grade already exists.
+
+grade_with_same_name_different_description:
+    responseCode : 4018
+    message :  Similar grade name already exists.
+
+edit_grade :
+     gradeName: EditedGradeFromAutomation
+     gradeDescription: Edited Grade Test Case
+
+
+
+edit_grade_response :
+      responseCode: 2000
+      message : Grade edited successfully.
+
+
+edit_grade_with_deleted_id_response:
+      responseCode: 4033
+      message: No such GradeId exist.
+
+delete_grade_response :
+    responseCode: 2000,
+    message: Grade Deleted successfully.
+
+
+
+delete_grade_with_deleted_id_response:
+      responseCode: 4020
+      message: No Grades to Delete.
+

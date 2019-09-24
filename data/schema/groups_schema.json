@@ -1,0 +1,45 @@
+{"$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "responseCode": {
+      "$id": "/properties/responseCode",
+      "type": "integer"
+    },
+    "message": {
+      "$id": "/properties/message",
+      "type": "string"
+    },
+    "groups": {
+      "$id": "/properties/groups",
+      "type": "array",
+      "items": {
+        "$id": "/properties/groups/items",
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "$id": "/properties/groups/items/properties/groupId",
+            "type": "integer"
+          },
+          "groupName": {
+            "$id": "/properties/groups/items/properties/groupName",
+            "type": "string"
+          },
+          "groupDescription": {
+            "$id": "/properties/groups/items/properties/groupDescription",
+            "type": "string"
+          },
+          "permissions": {
+            "$id": "/properties/groups/items/properties/permissions",
+            "type": "array",
+            "items": {
+              "$id": "/properties/groups/items/properties/permissions/items",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

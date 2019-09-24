@@ -1,0 +1,35 @@
+login:
+    base_url :                      http://34.192.201.69:4000/
+admin:
+    email :                         ewaadmin@celsysemail.celsyswtc.in
+    password :                      Cel@123
+
+employee:
+    email :                         ewaemployee@celsysemail.celsyswtc.in
+    password :                      Cel@123
+
+apis:
+    permissions :                   admin/permissions/allPermissions
+    grade_list_endpoint :           admin/grades/gradeList
+    add_grade_info_endpoint :       admin/grades/addGradeInfo
+    edit_grade_info_endpoint :      admin/grades/editGradeInfo/
+    delete_grade_endpoint :         admin/grades/deleteGradeInfo/
+    group_list_endpoint :           admin/groups/groupsList
+    add_group_info_endpoint :       admin/groups/addGroupInfo
+    edit_group_info_endpoint :      admin/groups/editGroupInfo/
+    delete_group_endpoint :         admin/groups/deleteGroupInfo/
+    employee_basic_data_endpoint :  admin/hr/addEmployeeBasicInfo
+    hr_admin_data_endpoint :        admin/hr/adminData
+    org_address_list_endpoint :     admin/orgAddress/orgAddressList
+    remove_user_endpoint      :     admin/employeesettings/removeuser?email=
+    employee_list_endpoint    :     admin/employeeSettings/employeeList
+    add_role_info_endpoint   :     admin/roles/addRole
+    delete_role_endpoint :         admin/roles/deleteRole/
+    roles_list_enpoint  :          admin/roles/getAllRoles?
+    edit_role_endpoint :           admin/roles/editRole/
+
+
+
+
+#JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NjUsImVtYWlsIjoic3VtYW5hcmFtZXNoQGNlbGVzdGlhbHN5cy5jb20iLCJjcmVhdGVkX2F0IjoiMjAxOC0wNi0yOFQxMjoyMzo0OC4yNDFaIn0.EAVxsqnDtHi9d7Qku6SjlXqUFuti82fo26AR4Kzg1Gg
+#JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NjUsImVtYWlsIjoic3VtYW5hcmFtZXNoQGNlbGVzdGlhbHN5cy5jb20iLCJjcmVhdGVkX2F0IjoiMjAxOC0wNi0yOFQxMjoyMzo0OC4yNDFaIn0.EAVxsqnDtHi9d7Qku6SjlXqUFuti82fo26AR4Kzg1Gg

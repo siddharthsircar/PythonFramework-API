@@ -1,0 +1,76 @@
+groups_list_schema : schema/groups_schema.json
+
+add_group :
+    -  groupName: AddgroupFromAutomation
+       groupDescription: Automation group Test Case
+       permissions: [1,2]
+
+    -  groupName: AddgroupFromAutomationAddgroupFromAutomationAddgroupFromAutomationAddgroupFromAutomationAddgroupFromAutomation
+       groupDescription: Automation group Test Case Automation group Test Case Automation group Test Case Automation group Test Case Automation group Test Case Automation group Test Case Automation group Test Case
+       permissions: [1,2,3]
+
+    -  groupName: $3786876!!!&8789975667
+       groupDescription: group Description
+       permissions: [1,2,4]
+
+    -  groupName: ~!@#$%^&*()_
+       groupDescription: ~!@#$%^&*()
+       permissions: [1,2,5]
+
+    -  groupName: ¸Ωƒ©ƒƒ¥¨¨œ¨¨∑˙ß√˙∆∆˙ß
+       groupDescription: ©≈˙©ß©ˆ¨¨ˆˆ∂π∫∆∫¬∆ç©øˆ©ˆˆ©ç©¨¨ç¨¨©∂∫∫˜˜≈∫ßåÔÓı≈Ø©Ø≈©Ø
+       permissions: [1,2,6]
+
+
+    -  groupName:   All permissions
+       groupDescription: All permissions
+       permissions: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+
+
+add_group_response :
+      responseCode : 2000
+      message :  Group added successfully.
+
+edit_group :
+     groupName: EditedgroupFromAutomation
+     groupDescription: Edited group Test Case
+
+
+
+edit_group_response :
+      responseCode: 2000
+      message : Group edited successfully.
+
+
+edit_group_with_deleted_id_response:
+      responseCode: 4034
+      message: No such GroupId exist.
+
+delete_group_response :
+    responseCode: 2000,
+    message: Group Deleted successfully.
+
+
+add_group_with_same_name :
+     responseCode : 4011
+     message :  Similar group already exists.
+
+group_with_same_name_different_description:
+    responseCode : 4012
+    message :  Similar group name already exists.
+
+
+
+delete_group_with_deleted_id_response:
+      responseCode: 4021
+      message: No Groups to Delete.
+
+#add group name in the end
+add_group_with_same_permissions :
+     responseCode : 4037
+     message :  Similar permission group exist under the name
+
+non_admin_token_response :
+    responseCode : 401
+    message :  Permission denied
+
